@@ -11,7 +11,7 @@ Requirements
 - (Optional) Runs on docker and the application can be started with a single command `docker-compose up`
 - The running application can be reached in the browser at *[host]:8080*
 - The application is delivered with a sufficient admin reachable at *[host]:8080/admin*
-- Delivered as a branch of this Bitbucket repository, pushed to the origin
+- Delivered as a branch of this Bitbucket repository, pushed to the remote repository. Branch name should be YourFirstName_YourLastName e.g. Jan_Kowalski
 
 Instructions on recreating base environment
 ========
