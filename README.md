@@ -43,7 +43,7 @@ This section describes which functionalities should the CRM submitted by you hav
     - email - it has to have @anulujkredyt.pl in it
     - permission level - either basic or high
     - password
-3. User authentication - login as the email. Do not worry about security aspects for now. Tip: feel free to follow generale guideliens for setting up basic authentication: https://docs.djangoproject.com/en/3.1/topics/auth/
+3. User authentication - login as the email. Do not worry about security aspects for now. Tip: feel free to follow general guidelines for setting up basic authentication: https://docs.djangoproject.com/en/3.1/topics/auth/
 4. Ability to add customers, with the following details:
     - first and last name
     - telephopne - no more than 9 digits and no spaces
