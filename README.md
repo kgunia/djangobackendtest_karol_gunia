@@ -52,12 +52,11 @@ This section describes which functionalities should the CRM submitted by you hav
     - only person with high permission level can add customer 
 5. (Endpoint) Ability to delete customers from the database - only person with high permission level can do that.
 6. (Endpoint) Ability to edit customer details given customer's id
-7. (Endpoint) Ability to add a purchase with the following characteristics:
-    - one client can purchase multiple cars
+7. (Endpoint) Ability to add a purchase, many to one relationship with respect to custoemrs, with the following characteristics:
     - the following cars can be purchased: red, blue or green
 8. (Endpoint) Ability to list all purchases inside a database with the following characteristics:
-    - possibility to filter customers who made the purchase 
-9. There has to be an API documentation, separate endpoint, which describes url addresses and their parameters/queries - tip: feel free to Swagger or whatever other documentation tool
+    - possibility to filter customers who made purchase of a specific car - i.e. red car, green car etc.
+9. There has to be an API documentation, separate endpoint, which describes url addresses and their parameters/queries - tip: feel free to utilize Swagger or whatever other documentation tool
 10. There has to be unit test coverage and you have to report on that coverage - tip: feel free to use external packages such as django-nose
 
 !!!! You are asked to create a BACKEND application - i.e. no frontend-related code is necessary and will not be graded.
