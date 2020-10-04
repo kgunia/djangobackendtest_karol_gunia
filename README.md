@@ -54,7 +54,7 @@ This section describes which functionalities should the CRM submitted by you hav
     - possibility to filter customers who made purchase of a specific car - i.e. red car, green car etc.
 6. (Endpoint) Ability to delete customers from the database - only person with high permission level can do that.
 7. (Endpoint) Ability to edit customer details given customer's id
-8. (Endpoint) Ability to add a purchase, many to one relationship with respect to custoemrs, with the following characteristics:
+8. (Endpoint) Ability to add a purchase, many to one relationship with respect to customers, with the following characteristics:
     - the following cars can be purchased: red, blue or green
 9. (Endpoint) Ability to list all purchases inside a database with the following characteristics:
     - possibility to filter purchase of a specific car - i.e. red car, green car etc.
