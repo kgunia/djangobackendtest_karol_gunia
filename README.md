@@ -44,16 +44,16 @@ This section describes which functionalities should the CRM submitted by you hav
     - permission level - either basic or high
     - password
 3. User authentication - login as the email. Do not worry about security aspects for now. Tip: feel free to follow general guidelines for setting up basic authentication: https://docs.djangoproject.com/en/3.1/topics/auth/
-4. Ability to add customers, with the following details:
+4. Ability to add customers, outside of django admin panel, with the following details:
     - first and last name
-    - telephopne - no more than 9 digits and no spaces
+    - telephone - no more than 9 digits and no spaces
     - email - needs to have @ character in it
-    - first and last name cannot repeat themsleves
+    - first and last name cannot repeat themselves. I.e. there can be Jan Nowak and Jerzy Nowak but there cannot be two people whose names and surnames are Jan Nowak.
     - only person with high permission level can add customer 
-5. Ability to delete customers from the database - only person with high permission level can do that.
-6. Ability to edit customer details given customer's id
-7. Ability to add a purchase done by the customer of one of the cars: red, blue or green
-8. Ability to list all purchases inside a database with the following characteristics:
+5. Ability to delete customers, outside of django admin panel, from the database - only person with high permission level can do that.
+6. Ability to edit customer details, outside of django admin panel, given customer's id
+7. Ability to add a purchase, outside of django admin panel, done by the customer of one of the cars: red, blue or green
+8. Ability to list all purchases, outside of django admin panel, inside a database with the following characteristics:
     - possibility to filter customers who made the purchase 
 9. There has to be an API documentation, separate endpoint, which describes url addresses and their parameters/queries - tip: feel free to Swagger or whatever other documentation tool
 10. There has to be unit test coverage and you have to report on that coverage - tip: feel free to use external packages such as django-nose
