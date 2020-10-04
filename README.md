@@ -37,23 +37,25 @@ Task
 ====
 This section describes which functionalities should the CRM submitted by you have:
 
-1. Ability to add users from django's admin panel - PLEASE SHARE WITH US USERNAME AND PASSWORD OF THE SUPERUSER
+1. (Django's admin panel) Ability to add users from - PLEASE SHARE WITH US USERNAME AND PASSWORD OF THE SUPERUSER
 2. Users have the following characteristics:
     - first and last name
     - email - it has to have @anulujkredyt.pl in it
     - permission level - either basic or high
     - password
-3. User authentication - login as the email. Do not worry about security aspects for now. Tip: feel free to follow general guidelines for setting up basic authentication: https://docs.djangoproject.com/en/3.1/topics/auth/
-4. Ability to add customers, outside of django admin panel, with the following details:
+3. (Endpoint) User authentication - login is the email. Do not worry about security aspects. Tip: feel free to follow general guidelines for setting up basic authentication: https://docs.djangoproject.com/en/3.1/topics/auth/
+4. (Endpoint) Ability to add customers with the following details:
     - first and last name
     - telephone - no more than 9 digits and no spaces
     - email - needs to have @ character in it
     - first and last name cannot repeat themselves. I.e. there can be Jan Nowak and Jerzy Nowak but there cannot be two people whose names and surnames are Jan Nowak.
     - only person with high permission level can add customer 
-5. Ability to delete customers, outside of django admin panel, from the database - only person with high permission level can do that.
-6. Ability to edit customer details, outside of django admin panel, given customer's id
-7. Ability to add a purchase, outside of django admin panel, done by the customer of one of the cars: red, blue or green
-8. Ability to list all purchases, outside of django admin panel, inside a database with the following characteristics:
+5. (Endpoint) Ability to delete customers from the database - only person with high permission level can do that.
+6. (Endpoint) Ability to edit customer details given customer's id
+7. (Endpoint) Ability to add a purchase with the following characteristics:
+    - one client can purchase multiple cars
+    - the following cars can be purchased: red, blue or green
+8. (Endpoint) Ability to list all purchases inside a database with the following characteristics:
     - possibility to filter customers who made the purchase 
 9. There has to be an API documentation, separate endpoint, which describes url addresses and their parameters/queries - tip: feel free to Swagger or whatever other documentation tool
 10. There has to be unit test coverage and you have to report on that coverage - tip: feel free to use external packages such as django-nose
