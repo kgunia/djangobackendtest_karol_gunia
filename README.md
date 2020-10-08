@@ -58,8 +58,7 @@ This section describes which functionalities should the CRM submitted by you hav
     - the following cars can be purchased: red, blue or green
 9. (Endpoint) Ability to list all purchases inside a database with the following characteristics:
     - possibility to filter purchase of a specific car - i.e. red car, green car etc.
-10. There has to be an API documentation, separate endpoint, which describes url addresses and their parameters/queries - tip: feel free to utilize Swagger or whatever other documentation tool
-11. There has to be unit test coverage and you have to report on that coverage - tip: feel free to use external packages such as django-nose
+10. (Optional) API documentation, which describes url addresses and their parameters/queries - tip: feel free to utilize Swagger or whatever other documentation tool
 
 !!!! You are asked to create a BACKEND application - i.e. no frontend-related code is necessary and will not be graded.
 
