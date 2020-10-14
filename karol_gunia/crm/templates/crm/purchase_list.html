@@ -1,0 +1,13 @@
+{% extends 'crm/base.html' %}
+{% block content %}
+<form method="get">
+    {{ form }}
+  <button type="submit">Search</button>
+</form>
+<a href="{% url 'purchase-create' %}">Add purchase</a>
+<ul>
+  {% for instance in object_list %}
+    <li>{{ instance }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}
