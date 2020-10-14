@@ -1,10 +1,8 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
-from django.contrib.auth.decorators import permission_required
-from django.views.generic import CreateView, UpdateView, DetailView, ListView, DeleteView
+from django.views.generic import CreateView, UpdateView, ListView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
-from .models import Customer
+from .models import Customer, Purchase
 from django.contrib import messages
+from .forms import CarForm
 
 
 # Create your views here.
@@ -21,6 +19,7 @@ class CustomerCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView
             messages.add_message(self.request, messages.INFO, f'Customer {first_name} {last_name} already exists')
             return super().form_invalid(form)
         else:
+            messages.add_message(self.request, messages.INFO, f'Saved')
             return super().form_valid(form)
 
 class CustomerUpdateView(CustomerCreateView, UpdateView):
@@ -29,9 +28,42 @@ class CustomerUpdateView(CustomerCreateView, UpdateView):
 class CustomerDeleteView(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
     model = Customer
     permission_required = 'crm.delete_customer'
+    success_url = '/customer/'
+
 
 class CustomerListView(LoginRequiredMixin, PermissionRequiredMixin, ListView):
     model = Customer
     permission_required = 'crm.view_customer'
 
-    
+    def get_queryset(self):
+        product = self.request.GET.get('product', None)
+        if product:
+            return super().get_queryset().filter(purchase__product=product).distinct()
+        else:
+            return super().get_queryset()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = CarForm(self.request.GET)
+        return context
+
+class PurchaseCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
+    model = Purchase
+    fields = ['customer', 'product']
+    permission_required = 'crm.add_purchase'
+
+class PurchaseListView(LoginRequiredMixin, PermissionRequiredMixin, ListView):
+    model = Purchase
+    permission_required = 'crm.view_purchase'
+
+    def get_queryset(self):
+        product = self.request.GET.get('product', None)
+        if product:
+            return super().get_queryset().filter(product=product)
+        else:
+            return super().get_queryset()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = CarForm(self.request.GET)
+        return context

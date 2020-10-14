@@ -1,9 +1,12 @@
 {% extends 'crm/base.html' %}
 {% block content %}
-
+<form method="get">
+    {{ form }}
+  <button type="submit">Search</button>
+</form>
 <ul>
   {% for instance in object_list %}
-    <li>{{ instance }}</li>
+    <li>{{ instance }} <a href="{% url 'customer-delete' pk=instance.pk %}">delete</a> <a href="{% url 'customer-update' pk=instance.pk %}">edit</a></li>
   {% endfor %}
 </ul>
 {% endblock %}

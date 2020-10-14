@@ -5,4 +5,10 @@
     {% endfor %}
 </ul>
 {% endif %}
+
+<a href="{% url 'customer-list' %}">Customer list</a>
+<a href="{% url 'purchase-list' %}">Purchase list</a>
+<a href="{% url 'customer-create' %}">Add customer</a>
+<a href="{% url 'purchase-create' %}">Add purchase</a>
+<hr>
 {% block content %}{% endblock %}

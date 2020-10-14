@@ -121,3 +121,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'crm.User'
+LOGIN_URL = '/admin/login/'

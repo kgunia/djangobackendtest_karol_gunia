@@ -3,8 +3,8 @@
 {% block content %}
 
 <form method="POST">{% csrf_token %}
-  Jesteś pewien że chcesz usunąć klienta: <b>{{ object }}</b>?
-  <button type="submit">Tak, jestem pewien.</button>
-  <a href="#" onclick="window.history.go(-1);">Nie, zabierz mnie stąd!</a>
+  Are you sure to delete customer: <b>{{ object }}</b>?
+  <button type="submit">Yes</button>
+  <a href="#" onclick="window.history.go(-1);">No</a>
 </form>
 {% endblock %}
